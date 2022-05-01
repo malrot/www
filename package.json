@@ -1,0 +1,13 @@
+{
+  "name": "malrot-site",
+  "scripts": {
+    "build:assets": "npx @11ty/eleventy --input=./src --output=./docs",
+    "build:format": "prettier --write . '!**/*.hbs'",
+    "build": "npm run build:assets && npm run build:format",
+    "serve": "npx @11ty/eleventy --input=./src --output=./docs --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "prettier": "^2.6.2"
+  }
+}

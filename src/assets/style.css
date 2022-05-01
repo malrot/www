@@ -1,0 +1,177 @@
+/* ************************ */
+/* CSS - For www.malrot.org */
+/* ************************ */
+
+::selection {
+  background: rgba(0, 0, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #111;
+  padding: 0px;
+  font-family: "EB Garamond", serif;
+  margin: 100px auto 100px auto;
+  padding: 0 20px 0 30px;
+  max-width: 700px;
+  font-size: 20px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 150px auto 15px auto;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+h1 > a,
+h1 > a:hover {
+  text-decoration: none;
+  color: blue !important;
+  border: 0;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+strong {
+  font-weight: 600;
+  color: black;
+}
+
+h2 {
+  font-size: 23px;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  margin-top: 80px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "EB Garamond", serif;
+  color: blue;
+  font-weight: 600;
+  margin: 40px 0 10px 0;
+}
+
+code {
+  font-family: monospace;
+  font-weight: 400;
+  font-size: calc(100% - 15%);
+  background-color: rgba(0, 0, 255, 0.1);
+  color: black;
+  border-radius: 7px;
+  padding: 0px 4px 0px 4px;
+  display: inline-block;
+}
+
+.language-http {
+  background-color: white;
+  font-size: 105%;
+  overflow: scroll;
+  display: block;
+  padding: 0px;
+}
+
+.language-jsonc {
+  overflow: scroll;
+  border-radius: 10px;
+  padding: 10px;
+  display: block;
+  background-color: rgba(0, 0, 255, 0.03);
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: 0.1s ease-in background;
+  transition: 0.1s ease-in background;
+  border-bottom: 1px solid;
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: rgb(238, 238, 238);
+}
+
+blockquote {
+  font-size: 17px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+body > ul > li {
+  margin-bottom: 15px;
+}
+
+body > ul > li > ul > li:first-child {
+  margin-top: 3px;
+}
+
+input[type="text"] {
+  margin-top: 15px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 6px;
+  padding: 10px 14px 10px 14px;
+  width: 250px;
+  font-size: 18px;
+  font-family: "Helvetica", sans-serif;
+}
+
+input[type="submit"] {
+  outline: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: blue;
+  color: white;
+  margin-top: 15px;
+  margin-left: 15px;
+  border: 2px solid blue;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 14px 10px 14px;
+  font-size: 18px;
+  font-family: "Helvetica", sans-serif;
+}
+
+table {
+  margin-top: 25px;
+}
+
+thead {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+td {
+  padding-right: 24px;
+  font-size: 17px;
+}
+
+.footer__title {
+  margin-top: 60px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer__text {
+  margin: 0px;
+  font-size: 16px !important;
+  line-height: 17px;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cultural institutions are experts at organizing events and exhibitions, but they might have less experience building apps. MALROT lets them publish their events data once and worldwide (while staying in full control) and developers freely consume these data to build innovative services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="icon" href="data:," />
+    <title>MALROT – API Documentation</title>
+    <!-- Privacy-first analytics (GDPR compliant) -->
+    <script
+      defer
+      data-domain="malrot.org"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+  <body>
+    <h1><a href="/">←</a> API Doc</h1>
+<h2>Introduction</h2>
+<p><em>Work in progress. API returns fake or no data. Do not use.</em></p>
+<p>MALROT <code>API</code> is <strong>no-auth</strong>, <strong>public</strong> and <strong>forever free to use</strong>. It's also <strong>static</strong> because it doesn't perform any action other than delivering flat JSON files that live on a CDN.</p>
+<p>This <code>API</code> is organized around REST, has predictable resource-oriented URL, uses standard HTTP codes and verbs, and returns JSON (see <a href="https://github.com/malrot/malrot-api">API code</a>).</p>
+<p>All endpoints below assume <code>HTTP 200 OK</code>. Payload examples are fictional.</p>
+<h2>&gt; List events</h2>
+<h3>Endpoint</h3>
+<pre><code class="language-http">GET https://api.malrot.org/v1/events?PARAMETERS
+</code></pre>
+<p><strong>Optional parameters</strong></p>
+<ul>
+<li><code>org</code>
+<ul>
+<li>A filter on the list based on the organization domain name</li>
+<li>Value must be a string (e.g. <code>louvre.fr</code>)</li>
+<li>Only one value is allowed (e.g. <code>org=louvre.fr</code>)</li>
+</ul>
+</li>
+<li><code>country</code>
+<ul>
+<li>A filter on the list based on the country where the event occurs</li>
+<li>Value must be a valid ISO 3166-1 alpha-2 string (e.g. <code>FR</code> for France)</li>
+<li>Multiple values, separated by a comma, are allowed (e.g. <code>country=FR,BE,LU</code>)</li>
+</ul>
+</li>
+<li><code>around</code>
+<ul>
+<li>A filter on the list based on a geographic point (WGS 84) and a radius around this point</li>
+<li>Value must be a string of 3 numbers separated by a comma (e.g. <code>4.805,43.949,10</code>)
+<ul>
+<li>First number must be the <em>longitude</em> of the center of the search area</li>
+<li>Second number must be the <em>latitude</em> of the center of the search area</li>
+<li>Third number must be the <em>radius</em> in kilometers of the search area</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>updated_after</code>
+<ul>
+<li>A filter on the list based on when an event has been updated</li>
+<li>Value must be a Unix timestamp (e.g. <code>1647420160</code>)</li>
+</ul>
+</li>
+</ul>
+<h3>Returns a JSON array of objects</h3>
+<pre><code class="language-jsonc">[
+  {
+    &quot;endpoint&quot;:&quot;https://api.malrot.org/v1/events/louvre.fr__defF7d1D.json&quot;,
+    &quot;country&quot;:&quot;FR&quot;,
+    &quot;created_at&quot;:1644401946288,
+    &quot;updated_at&quot;:1644738558865,
+    &quot;longitude&quot;:4.805,
+    &quot;latitude&quot;:43.949,
+    &quot;distance&quot;:9.45
+    },
+    {...}
+  ]
+</code></pre>
+<h3>With properties</h3>
+<table>
+<thead>
+<tr>
+<th>PROPERTY</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>endpoint</td>
+<td><code>string</code></td>
+<td>API endpoint to event data</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td><code>number</code></td>
+<td>When this event has been created (Unix timestamp)</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td><code>number</code></td>
+<td>When this event has been updated (Unix timestamp)</td>
+</tr>
+<tr>
+<td>country</td>
+<td><code>string</code></td>
+<td>ISO 3166-1 alpha-2 country code where the event occurs</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td><code>number</code></td>
+<td>WGS 84 longitude of the event</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td><code>number</code></td>
+<td>WGS 84 latitude of the event</td>
+</tr>
+<tr>
+<td>distance</td>
+<td><code>number</code></td>
+<td>Distance in km between event and <code>GET</code> params <em>(if provided)</em></td>
+</tr>
+</tbody>
+</table>
+<h2>&gt; Get event data</h2>
+<h3>Endpoint</h3>
+<pre><code class="language-http">GET https://api.malrot.org/v1/events/:event
+</code></pre>
+<h3>Returns</h3>
+<p><code>JSON</code> data, formatted according to MALROT <a href="https://spec.malrot.org">specification</a> and describing an event.</p>
+<h2>&gt; Check API health</h2>
+<h3>Endpoint</h3>
+<pre><code class="language-http">GET https://api.malrot.org/v1/health
+</code></pre>
+<h3>Returns</h3>
+<p><code>HTTP 200 OK</code> if <code>API</code> and <code>CDN</code> are up and running.</p>
+
+    <footer>
+      <p class="footer__title">MALROT docs are open source</p>
+      <p class="footer__text">See something that's wrong/unclear? Submit
+        <a
+          href="https://github.com/malrot/www/blob/master/./src/api.md"
+        >a pull request</a>.
+      </p>
+    </footer>
+  </body>
+</html>

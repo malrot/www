@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cultural institutions are experts at organizing events and exhibitions, but they might have less experience building apps. MALROT lets them publish their events data once and worldwide (while staying in full control) and developers freely consume these data to build innovative services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="icon" href="data:," />
+    <title>MALROT – Making cultural event data universally accessible</title>
+    <!-- Privacy-first analytics (GDPR compliant) -->
+    <script
+      defer
+      data-domain="malrot.org"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+  <body>
+    <h1>MALROT</h1>
+<p>Making cultural event data universally accessible.</p>
+<h2>TL;DR</h2>
+<p>Cultural institutions are experts at organizing events and exhibitions, but they might have less experience building apps. MALROT (pronounced <code>/mal-ROH/</code>) lets them publish their events data <strong>once</strong> and <strong>worldwide</strong> (while staying in full control) and developers <strong>freely</strong> consume these data to build innovative services.</p>
+<p>At its core, MALROT is 4 things:</p>
+<ul>
+<li>
+<p>A <strong>simple</strong>, <strong>open</strong> and <strong>interoperable file format</strong> that describes cultural events and associated metadata like schedules, description, location, etc.</p>
+</li>
+<li>
+<p>An <strong>open-access repository</strong> where live worldwide, standardized and up-to-date cultural events data (aka MALROT file) or link to them.</p>
+</li>
+<li>
+<p>A <strong>public static <code>API</code></strong> allowing anyone to consume MALROT files (JSON files that live on a <em>Content Delivery Network</em>) and build app.</p>
+</li>
+<li>
+<p><strong>Open-source tools</strong> to help generate, validate and host MALROT files.</p>
+</li>
+</ul>
+<h2>How do I start?</h2>
+<ul>
+<li>
+<p><strong>Quick links</strong></p>
+<ul>
+<li>Read MALROT <a href="https://spec.malrot.org">specification</a> (<em>work in progress</em>)</li>
+<li><a href="https://github.com/orgs/malrot/discussions/categories/spec">Start a discussion</a> if you have any ideas</li>
+</ul>
+</li>
+<li>
+<p><strong>Full table of contents</strong></p>
+<ul>
+<li><a href="#problems">What are the problems MALROT wants to solve?</a></li>
+<li><a href="#whats">So what's MALROT?</a></li>
+<li><a href="#benefits">What are the benefits?</a></li>
+<li><a href="#concretely">What's next: I'm a cultural institution</a></li>
+<li><a href="#concretely">What's next: I'm a developer, data-scientist or enthusiast</a></li>
+<li><a href="#contributing">Contributing to MALROT</a></li>
+<li><a href="#status">Project Status</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<h2><a name="problems"></a>What are the problems MALROT wants to solve?</h2>
+<h3>Undiscoverable culture = no culture</h3>
+<p>Nowadays, you can order a cab or book a room with your phone in seconds almost everywhere in the world, but can't get a quick answer to <em>&quot;is there, one kilometer around, a painting exhibition opened this evening, accessible to the disabled and free?&quot;</em>. That's not understandable.</p>
+<h3>Time and money to create culture, not to copy/paste agendas</h3>
+<p>Cultural institutions spend a lot of time sending their calendars to media or filling forms to list their events in some closed and not so well-known platforms. At the same time, media manually type cultural calendars into their <em>Content Management System</em>.</p>
+<p>Both are a time consuming, error prone, low value-added and never ending task to get nor an exhaustive nor an accurate listing. What a mess.</p>
+<h3>No standard + no open data = no innovation</h3>
+<p>Before 2005, there were no transit routes in Google Maps and other mobility apps, and no innovation in riders experience. At this time, it was missing <em>(i)</em> a data specification that allows transit agencies to publish their data in an interoperable format and <em>(ii)</em> transit operators open data. Since the invention of <a href="https://en.wikipedia.org/wiki/General_Transit_Feed_Specification">GTFS</a>, an array of services has appeared for the greatest good.</p>
+<p>Such a move is yet to be made in arts and culture.</p>
+<h3>Ticket fees must fund culture, not middlemen</h3>
+<p>Proprietary ticketing plateforms are complex middlemen and often a crossing point for public because they aggregate a part of cultural events.</p>
+<p>Cultural institutions should regain control of their ticketing gateway while communicating their events simply, quickly and broadly.</p>
+<h2><a name="whats"></a>So what's MALROT?</h2>
+<p>At its core, MALROT is 4 things:</p>
+<ul>
+<li>
+<p>A <strong>simple</strong>, <strong>open</strong> and <strong>interoperable file format</strong> that describes cultural events and associated metadata like schedules, description, location, etc.</p>
+</li>
+<li>
+<p>An <strong>open-access repository</strong> where live worldwide, standardized and up-to-date cultural events data (aka MALROT file) or link to them.</p>
+</li>
+<li>
+<p>A <strong>public static <code>API</code></strong> allowing anyone to consume MALROT files (JSON files that live on a <em>Content Delivery Network</em>) and build app.</p>
+</li>
+<li>
+<p><strong>Open-source tools</strong> to help generate, validate and host MALROT files.</p>
+</li>
+</ul>
+<h2><a name="benefits"></a>What are the benefits?</h2>
+<ul>
+<li>
+<p><strong>For cultural institutions</strong></p>
+<ul>
+<li>Engage with <strong>broader</strong> and <strong>new audiences</strong></li>
+<li>Get a <strong>renewed control</strong> of your ticketing gateway and <strong>increase revenue</strong></li>
+<li>Publish your events <strong>worldwide</strong> in a <strong>one-time</strong> task</li>
+<li>Keep <strong>full</strong> and <strong>constant control</strong> over your event data</li>
+<li><strong>Devote less resources</strong> to low value-added and repetitive tasks</li>
+</ul>
+</li>
+<li>
+<p><strong>For people</strong></p>
+<ul>
+<li>Have <strong>all surrounding cultural events</strong> at your fingertips</li>
+<li>Get a brand new <strong>cultural and area discovery experience</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>For media and platforms</strong></p>
+<ul>
+<li><strong>Waste less</strong> time manually typing events into your systems</li>
+<li><strong>Invest more</strong> time curating and editorializing events</li>
+</ul>
+</li>
+<li>
+<p><strong>For developers</strong></p>
+<ul>
+<li>Build amazing apps and invent new services!</li>
+<li>Request a public <code>API</code> to <code>GET</code> worldwide cultural events data</li>
+<li>Use a standard and interoperable format, fully documented</li>
+</ul>
+</li>
+<li>
+<p><strong>For public authorities</strong></p>
+<ul>
+<li>Make <strong>local cultural events discovery</strong> far more easier</li>
+<li>Increase <strong>territorial attractiveness</strong> and local GDP</li>
+</ul>
+</li>
+</ul>
+<h2><a name="concretely"></a>Concretely, what's next?</h2>
+<p><em>Some tools are currently unavailable until MALROT spec reaches a stable version.</em></p>
+<ul>
+<li><strong>I'm a cultural institution and I want to:</strong>
+<ul>
+<li>contribute to MALROT <a href="#spec">spec</a></li>
+<li><s>generate and host events on MALROT website <em>(forever free)</em></s></li>
+</ul>
+</li>
+<li><strong>I'm an enthusiat, developer or data-scientist and I want to:</strong>
+<ul>
+<li>contribute to MALROT <a href="#spec">spec</a>, <a href="#tools">tools</a> or <a href="#tools">API</a></li>
+<li>read <a href="/api"><code>API</code> docs</a> to consume MALROT files (<em>work in progress</em>)</li>
+</ul>
+</li>
+</ul>
+<h2><a name="contributing"></a>Contributing</h2>
+<p>Help and support are more than welcome to make MALROT real.<br>
+See <a href="https://github.com/orgs/malrot/projects/1">roadmap and TODO</a>.</p>
+<h3><a name="spec"></a>Contribute to MALROT spec</h3>
+<p>You can <a href="https://spec.malrot.org">read</a> MALROT specification (<em>work in progress</em>) and <a href="https://github.com/orgs/malrot/discussions/categories/spec">give feedback</a>.</p>
+<h3><a name="tools"></a>Build and make better open source tools</h3>
+<p>MALROT tools are an <a href="https://github.com/malrot/api">API</a> and an <a href="https://github.com/malrot/app">app</a> for generating, validating and hosting MALROT files (<em>works in progress</em>). Do not hesitate to make improvements, add tests, report bugs. Whatever.</p>
+<h3><a name="evangelism"></a>Help evangelize MALROT</h3>
+<p>The BIG one. Help us evangelize MALROT to cultural institutions and public authorities.</p>
+<h2><a name="status"></a>Project status</h2>
+<ul>
+<li><strong>2022-05-01</strong><br>
+MALROT website and GitHub account are live and MALROT specification will be discussed with cultural institutions in the next coming months. Objective is a stable <code>1.0.0</code> version in S2 2022.</li>
+</ul>
+<h3>Get MALROT updates delivered right to your inbox</h3>
+<form action="https://tinyletter.com/malrot" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/malrot', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><input type="text" name="email" id="tlemail" placeholder="Email" /><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" /></form>
+<h2><a name="license"></a>License</h2>
+<p>Except as otherwise noted, content of MALROT GitHub repositories and MALROT files are licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY SA 4.0</a>, code under the <a href="https://github.com/malrot/www/blob/master/LICENSE.md">MIT</a>.</p>
+<p>MALROT is based on an idea from <a href="https://github.com/charnould">Charles-Henri ARNOULD</a> — <a href="mailto:info@malrot.org">info@malrot.org</a></p>
+
+    <footer>
+      <p class="footer__title">MALROT docs are open source</p>
+      <p class="footer__text">See something that's wrong/unclear? Submit
+        <a
+          href="https://github.com/malrot/www/blob/master/./src/index.md"
+        >a pull request</a>.
+      </p>
+    </footer>
+  </body>
+</html>
